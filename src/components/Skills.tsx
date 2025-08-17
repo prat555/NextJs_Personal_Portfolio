@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface Skill {
   name: string;
@@ -73,7 +73,7 @@ export default function Skills() {
 ];
 
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -82,10 +82,26 @@ export default function Skills() {
     },
   };
 
-  const skillVariants = {
+  const skillVariants: Variants = {
     hidden: { opacity: 0, scale: 0.5, y: 20 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 20 } },
-    hover: { scale: 1.1, rotate: 5, transition: { type: "spring", stiffness: 300 } },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0, 
+      transition: { 
+        type: "spring" as const, 
+        stiffness: 300, 
+        damping: 20 
+      } 
+    },
+    hover: { 
+      scale: 1.1, 
+      rotate: 5, 
+      transition: { 
+        type: "spring" as const, 
+        stiffness: 300 
+      } 
+    },
   };
 
   return (
