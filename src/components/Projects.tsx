@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import ecommerceBg from "@/assets/shizuka.png";
 import aiBg from "@/assets/ecovision.png";
 import neuroBg from "@/assets/nuerorisk.png";
@@ -21,7 +21,7 @@ interface Project {
   };
   gradient: string;
   icon: string;
-  backgroundImage: any;
+  backgroundImage: StaticImageData;
   category: string;
 }
 
@@ -38,7 +38,7 @@ export default function Projects() {
         github: "https://github.com/prat555/Shizuka",
         live: "https://shizuka-san.vercel.app/",
       },
-      gradient: "from-green-400 to-blue-500",
+      gradient: "from-green-400 to-blue-600",
       icon: "fas fa-shopping-cart",
       backgroundImage: ecommerceBg,
       category: "Web Development",
@@ -65,7 +65,7 @@ export default function Projects() {
         github: "https://github.com/prat555/EcoVision",
         live: "https://ecovisionscan.onrender.com/",
       },
-              gradient: "from-blue-400 to-cyan-500",
+      gradient: "from-blue-400 to-cyan-500",
       icon: "fas fa-camera",
       backgroundImage: aiBg,
       category: "AI/ML",
@@ -78,7 +78,7 @@ export default function Projects() {
       links: {
         github: "https://github.com/prat555/Movie-App",
       },
-              gradient: "from-blue-400 to-indigo-500",
+      gradient: "from-blue-400 to-indigo-500",
       icon: "fas fa-film",
       backgroundImage: movieAppBg,
       category: "Mobile Development",
@@ -98,49 +98,30 @@ export default function Projects() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  };
-
   return (
     <section id="projects" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-12 sm:mb-16"
         >
-          <motion.div variants={itemVariants} className="inline-block">
-          </motion.div>
-            
           <motion.h2 
-            variants={itemVariants}
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
             className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary dark:text-white mb-4 sm:mb-6"
           >
-            Featured <span className="text-gradient bg-gradient-to-r from-accent to-blue-500 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="text-gradient bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent">Projects</span>
           </motion.h2>
           <motion.p 
-            variants={itemVariants}
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
             className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Showcasing my latest work in web development, mobile apps, and AI integration
@@ -150,16 +131,19 @@ export default function Projects() {
         {/* Desktop Grid View */}
         <div className="hidden lg:block">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
             viewport={{ once: true, margin: "-50px" }}
             className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
           >
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="group relative"
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
@@ -249,7 +233,7 @@ export default function Projects() {
                   
                   {/* Hover Glow Effect */}
                   {hoveredProject === index && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-500/5 to-indigo-500/5 rounded-2xl pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-600/5 to-indigo-500/5 rounded-2xl pointer-events-none"></div>
                   )}
                 </div>
               </motion.div>

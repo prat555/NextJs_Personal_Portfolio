@@ -50,6 +50,7 @@
 @layer base {
   * {
     border-color: hsl(var(--border));
+    transition: border-color 0.3s ease;
   }
   
   html {
@@ -62,6 +63,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Enhanced selection styles */
@@ -103,81 +105,100 @@
   background: linear-gradient(135deg, hsl(var(--accent) / 0.9), hsl(var(--accent) / 0.7));
 }
 
-/* Utility classes */
+/* Utility classes with smooth transitions */
 .bg-background {
   background-color: hsl(var(--background));
+  transition: background-color 0.3s ease;
 }
 
 .text-foreground {
   color: hsl(var(--foreground));
+  transition: color 0.3s ease;
 }
 
 .bg-primary {
   background-color: hsl(var(--primary));
+  transition: background-color 0.3s ease;
 }
 
 .text-primary {
   color: hsl(var(--primary));
+  transition: color 0.3s ease;
 }
 
 .bg-secondary {
   background-color: hsl(var(--secondary));
+  transition: background-color 0.3s ease;
 }
 
 .text-secondary {
   color: hsl(var(--secondary));
+  transition: color 0.3s ease;
 }
 
 .bg-accent {
   background-color: hsl(var(--accent));
+  transition: background-color 0.3s ease;
 }
 
 .text-accent {
   color: hsl(var(--accent));
+  transition: color 0.3s ease;
 }
 
 .bg-muted {
   background-color: hsl(var(--muted));
+  transition: background-color 0.3s ease;
 }
 
 .text-muted {
   color: hsl(var(--muted));
+  transition: color 0.3s ease;
 }
 
 .text-muted-foreground {
   color: hsl(var(--muted-foreground));
+  transition: color 0.3s ease;
 }
 
 .bg-card {
   background-color: hsl(var(--card));
+  transition: background-color 0.3s ease;
 }
 
 .text-card-foreground {
   color: hsl(var(--card-foreground));
+  transition: color 0.3s ease;
 }
 
 .bg-popover {
   background-color: hsl(var(--popover));
+  transition: background-color 0.3s ease;
 }
 
 .text-popover-foreground {
   color: hsl(var(--popover-foreground));
+  transition: color 0.3s ease;
 }
 
 .bg-destructive {
   background-color: hsl(var(--destructive));
+  transition: background-color 0.3s ease;
 }
 
 .text-destructive {
   color: hsl(var(--destructive));
+  transition: color 0.3s ease;
 }
 
 .border-border {
   border-color: hsl(var(--border));
+  transition: border-color 0.3s ease;
 }
 
 .border-input {
   border-color: hsl(var(--input));
+  transition: border-color 0.3s ease;
 }
 
 .ring-ring {

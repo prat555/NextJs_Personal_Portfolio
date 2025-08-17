@@ -61,12 +61,12 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
         toast({
           title: "Message sent successfully!",
-          description: "Thank you for your message. I'll get back to you soon.",
+          description: "Thank you for your message. I&apos;ll get back to you soon.",
         });
       } else {
         throw new Error("Failed to send message");
       }
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
@@ -101,7 +101,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
-            Let's <span className="text-gradient">Connect</span>
+            Let&apos;s <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Ready to discuss your next project or collaboration opportunity?
@@ -156,61 +156,60 @@ export default function Contact() {
           </motion.div>
 
           <motion.div
-  initial={{ x: 50, opacity: 0 }}
-  whileInView={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: true }}
-  className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8"
->
-  <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6">Quick Message</h3>
-  <form onSubmit={handleSubmit} className="space-y-4">
-    <Input
-      type="text"
-      name="name"
-      placeholder="Your Name"
-      value={formData.name}
-      onChange={handleChange}
-      required
-      className="dark:bg-gray-200 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
-    />
-    <Input
-      type="email"
-      name="email"
-      placeholder="Your Email"
-      value={formData.email}
-      onChange={handleChange}
-      required
-      className="dark:bg-gray-600 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
-    />
-    <Textarea
-      name="message"
-      placeholder="Your Message"
-      rows={4}
-      value={formData.message}
-      onChange={handleChange}
-      required
-      className="dark:bg-gray-600 dark:border-gray-600 dark:text-white dark:placeholder-gray-400"
-    />
-    <Button
-      type="submit"
-      disabled={isSubmitting}
-      className="w-full bg-accent hover:bg-accent/90 text-white"
-    >
-      {isSubmitting ? (
-        <>
-          <i className="fas fa-spinner fa-spin mr-2"></i>
-          Sending...
-        </>
-      ) : (
-        <>
-          <i className="fas fa-paper-plane mr-2"></i>
-          Send Message
-        </>
-      )}
-    </Button>
-  </form>
-</motion.div>
-
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8"
+          >
+            <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6">Quick Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+              />
+              <Textarea
+                name="message"
+                placeholder="Your Message"
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent resize-none"
+              />
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+              >
+                {isSubmitting ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin mr-2"></i>
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <i className="fas fa-paper-plane mr-2"></i>
+                    Send Message
+                  </>
+                )}
+              </Button>
+            </form>
+          </motion.div>
         </div>
 
         <motion.div
