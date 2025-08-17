@@ -170,6 +170,7 @@ export default function Projects() {
                       src={project.backgroundImage}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -282,6 +283,7 @@ export default function Projects() {
                           src={project.backgroundImage}
                           alt={project.title}
                           fill
+                          sizes="100vw"
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>

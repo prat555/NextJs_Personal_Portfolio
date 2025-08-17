@@ -60,6 +60,7 @@ export default function Hero() {
                 className="w-full h-full object-cover"
                 width={128}
                 height={128}
+                priority
               />
             </div>
           </div>
@@ -128,7 +129,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="flex justify-center space-x-6"
+            className="flex justify-center space-x-6 mb-16 sm:mb-12"
           >
             {socialLinks.map((link, index) => (
               <motion.a

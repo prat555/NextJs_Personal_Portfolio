@@ -165,32 +165,38 @@ export default function Contact() {
             <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6">Quick Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
-              />
-              <Input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
-              />
-              <Textarea
-                name="message"
-                placeholder="Your Message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent resize-none"
-              />
+  type="text"
+  name="name"
+  placeholder="Your Name"
+  value={formData.name}
+  onChange={handleChange}
+  required
+  autoComplete="name"  // <-- added
+  className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+/>
+
+<Input
+  type="email"
+  name="email"
+  placeholder="Your Email"
+  value={formData.email}
+  onChange={handleChange}
+  required
+  autoComplete="email"  // <-- added
+  className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+/>
+
+<Textarea
+  name="message"
+  placeholder="Your Message"
+  rows={4}
+  value={formData.message}
+  onChange={handleChange}
+  required
+  autoComplete="off"  // <-- textareas generally use off
+  className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent resize-none"
+/>
+
               <Button
                 type="submit"
                 disabled={isSubmitting}
