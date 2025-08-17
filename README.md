@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website - Next.js
+
+A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- 🎨 Modern, responsive design with dark/light theme support
+- ⚡ Built with Next.js 14 App Router
+- 🎭 Smooth animations with Framer Motion
+- 🎨 Styled with Tailwind CSS
+- 📱 Mobile-first responsive design
+- 🌙 Dark/Light theme toggle
+- 📧 Contact form with Formspree integration
+- 🚀 Optimized for Vercel deployment
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: Radix UI + Custom components
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <your-repo-url>
+cd portfolio-website-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run export` - Export static files
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/                 # Next.js App Router
+│   ├── layout.tsx      # Root layout
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/          # React components
+│   ├── ui/             # UI components
+│   ├── Navigation.tsx  # Navigation component
+│   ├── Hero.tsx        # Hero section
+│   ├── Skills.tsx      # Skills section
+│   ├── Projects.tsx    # Projects section
+│   ├── Education.tsx   # Education section
+│   └── Contact.tsx     # Contact section
+├── hooks/               # Custom hooks
+├── lib/                 # Utility functions
+└── assets/              # Images and static files
+```
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recommended)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically detect Next.js and deploy
+4. Your site will be available at `https://your-project.vercel.app`
+
+### Manual Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. The static files will be generated in the `out/` directory
+3. Deploy the contents of the `out/` directory to any static hosting service
+
+## Customization
+
+### Personal Information
+
+Update the following files with your information:
+- `src/components/Hero.tsx` - Name, title, description
+- `src/components/Contact.tsx` - Contact details
+- `src/components/Projects.tsx` - Your projects
+- `src/components/Skills.tsx` - Your skills
+- `src/components/Education.tsx` - Education and certifications
+
+### Styling
+
+- Colors and theme: Update `src/app/globals.css`
+- Tailwind config: Modify `tailwind.config.ts`
+- Component styles: Edit individual component files
+
+### Images
+
+- Replace images in `src/assets/` with your own
+- Update image imports in components
+- Ensure images are optimized for web
+
+## Performance
+
+- Images are optimized with Next.js Image component
+- CSS is purged with Tailwind CSS
+- Static export for optimal performance
+- Lazy loading for better user experience
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
