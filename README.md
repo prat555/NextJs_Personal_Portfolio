@@ -9,7 +9,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwi
 - 🎭 Smooth animations with Framer Motion
 - 🎨 Styled with Tailwind CSS
 - 📱 Mobile-first responsive design
-- 🌙 Dark/Light theme toggle
+- 🌙 Dark theme optimization
 - 📧 Contact form with Formspree integration
 - 🚀 Optimized for Vercel deployment
 
@@ -19,8 +19,8 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwi
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **UI Components**: Radix UI + Custom components
-- **Icons**: Lucide React
+- **UI Components**: shadcn/ui + Custom components
+- **Icons**: Font Awesome
 - **Deployment**: Vercel
 
 ## Getting Started
@@ -34,8 +34,8 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwi
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
-cd portfolio-website-nextjs
+git clone https://github.com/prat555/NextJs_Personal_Portfolio.git
+cd NextJs_Personal_Portfolio
 ```
 
 2. Install dependencies:
@@ -121,12 +121,34 @@ Update the following files with your information:
 - Update image imports in components
 - Ensure images are optimized for web
 
-## Performance
+### Contact Form Setup
+
+1. Go to [Formspree](https://formspree.io/) and create an account
+2. Create a new form and get your form endpoint URL
+3. In `src/components/Contact.tsx`, replace the existing form action with your Formspree endpoint:
+```tsx
+<form
+  action="YOUR_FORMSPREE_ENDPOINT_HERE"  // Replace this line
+  method="POST"
+  className="space-y-6"
+>
+```
+4. Test your form to ensure it's working correctly
+5. You'll receive form submissions directly in your email
+
+## Performance & Features
 
 - Images are optimized with Next.js Image component
 - CSS is purged with Tailwind CSS
 - Static export for optimal performance
 - Lazy loading for better user experience
+- Interactive project cards with hover effects
+- Smooth animations and transitions
+- Mobile-first responsive design
+- Optimized dark theme
+- Carousel for mobile project viewing
+- Contact form with validation
+- SEO optimized structure
 
 ## License
 

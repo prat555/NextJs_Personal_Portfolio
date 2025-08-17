@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/profile.png";
 
 export default function Hero() {
   const socialLinks = [

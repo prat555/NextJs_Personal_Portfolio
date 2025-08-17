@@ -12,7 +12,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Pratyush Goutam - Portfolio',
   description: 'Full-stack developer portfolio showcasing projects and skills',
+  icons: {
+    icon: '/profile.png',
+  },
 }
+
 
 export default function RootLayout({
   children,
