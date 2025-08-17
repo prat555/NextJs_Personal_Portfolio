@@ -99,11 +99,11 @@ export default function Education() {
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
                 <h4 className="text-xl font-semibold text-primary dark:text-white">
-                  Class XII (CBSE)
+                  High School Diploma (CBSE)
                 </h4>
                 <p className="text-accent font-medium">Delhi Public School, Indirapuram</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">Completed June 2021</p>
-                <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">Grade: 86%</p>
+                <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">Grade: XII-86% , X-95%</p>
                 <p className="text-gray-600 dark:text-gray-400 mt-2">
                   Coursework: Physics, Chemistry, Mathematics, Computer Science, English
                 </p>
