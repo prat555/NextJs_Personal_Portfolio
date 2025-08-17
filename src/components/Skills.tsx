@@ -49,9 +49,7 @@ export default function Skills() {
     icon: "fas fa-tools",
     skills: [
       { name: "Docker", icon: "fab fa-docker" },
-      { name: "Kubernetes", icon: "fas fa-server" },
       { name: "AWS", icon: "fab fa-aws" },
-      { name: "Azure", icon: "fab fa-microsoft" },
       { name: "Figma", icon: "fab fa-figma" },
       { name: "Jira", icon: "fas fa-tasks" },
       { name: "Linux", icon: "fab fa-linux" },
