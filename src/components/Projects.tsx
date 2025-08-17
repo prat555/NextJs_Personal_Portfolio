@@ -7,6 +7,7 @@ import aiBg from "@/assets/ecovision.png";
 import neuroBg from "@/assets/nuerorisk.png";
 import movieAppBg from "@/assets/movieapp.png";
 import foodDeliveryBg from "@/assets/food-delivery-app.png";
+import opbg from "@/assets/old-portfolio.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -96,6 +97,20 @@ export default function Projects() {
       backgroundImage: neuroBg,
       category: "AI/ML",
     },
+    {
+      title: "Personal Portfolio V1 - Classic Web Technologies",
+      description:
+        "My first portfolio website built with classic web technologies, featuring a clean and responsive design, project showcase, and contact form. Demonstrates proficiency in fundamental web development.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap","Netlify"],
+      links: {
+        github: "https://github.com/prat555/Old-Portfolio",
+        live: "https://pratyushg.netlify.app/",
+      },
+      gradient: "from-purple-400 to-pink-500",
+      icon: "fas fa-code",
+      backgroundImage: opbg, 
+      category: "Web Development",
+    },
   ];
 
   return (
@@ -182,7 +197,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                          className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                           title="View Code"
                         >
                           <i className="fab fa-github text-sm"></i>
@@ -195,7 +210,7 @@ export default function Projects() {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.95 }}
-                          className="w-10 h-10 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                          className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                           title="Live Demo"
                         >
                           <i className="fas fa-external-link-alt text-sm"></i>

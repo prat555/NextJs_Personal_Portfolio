@@ -2,13 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "@/components/ThemeProvider";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,45 +105,10 @@ export default function Navigation() {
                 )}
               </motion.button>
             ))}
-            
-            {/* Theme Toggle */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              onClick={toggleTheme}
-              className="ml-4 p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent hover:bg-accent/10 transition-all duration-300 group"
-              aria-label="Toggle theme"
-            >
-              <motion.i
-                key={theme}
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} text-lg`}
-              />
-            </motion.button>
           </div>
 
           {/* Mobile Menu Controls */}
-          <div className="md:hidden flex items-center space-x-3">
-            {/* Mobile Theme Toggle */}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-all duration-300"
-              aria-label="Toggle theme"
-            >
-              <motion.i
-                key={theme}
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'} text-sm`}
-              />
-            </motion.button>
-            
-            {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-all duration-300"

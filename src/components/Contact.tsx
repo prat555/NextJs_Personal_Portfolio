@@ -61,7 +61,7 @@ export default function Contact() {
         setFormData({ name: "", email: "", message: "" });
         toast({
           title: "Message sent successfully!",
-          description: "Thank you for your message. I&apos;ll get back to you soon.",
+          description: "Thank you for your message. I'll get back to you soon.",
         });
       } else {
         throw new Error("Failed to send message");
@@ -171,7 +171,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
               />
               <Input
                 type="email"
@@ -180,7 +180,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
               />
               <Textarea
                 name="message"
@@ -189,7 +189,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="bg-white dark:bg-gray-600 border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent resize-none"
+                className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent resize-none"
               />
               <Button
                 type="submit"
