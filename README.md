@@ -1,6 +1,6 @@
 # Portfolio Website - Next.js
 
-A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Features
 
@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, Tailwi
 
 ## Tech Stack
 
-- **Framework**: Next.js 14
+- **Framework**: Next.js 15
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
