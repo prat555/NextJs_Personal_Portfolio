@@ -372,7 +372,7 @@ export default function Projects() {
           className="text-center mt-12 sm:mt-16"
         >
           <motion.a
-            href="https://github.com/prat555"
+            href="https://github.com/prat555?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05, y: -2 }}
