@@ -33,15 +33,15 @@ export default function Skills() {
     title: "Technologies & Frameworks",
     icon: "fas fa-cogs",
     skills: [
+      { name: "Node.js", icon: "fab fa-node-js" },
       { name: "Next.js", icon: "fas fa-server" },
       { name: "React Native", icon: "fab fa-react" },
-      { name: "Node.js", icon: "fab fa-node-js" },
       { name: "Tailwind CSS", icon: "fas fa-palette" },
       { name: "Git", icon: "fab fa-git-alt" },
       { name: "MongoDB", icon: "fas fa-leaf" },
       { name: "MySQL", icon: "fas fa-database" },
-      { name: "PostgreSQL", icon: "fas fa-database" },
       { name: "Redis", icon: "fas fa-memory" },
+      { name: "PostgreSQL", icon: "fas fa-database" },
     ],
   },
   {
