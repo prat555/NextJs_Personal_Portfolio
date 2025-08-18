@@ -149,7 +149,3 @@ Update the following files with your information:
 - Carousel for mobile project viewing
 - Contact form with validation
 - SEO optimized structure
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
