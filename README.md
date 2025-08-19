@@ -88,16 +88,6 @@ src/
 3. Vercel will automatically detect Next.js and deploy
 4. Your site will be available at `https://your-project.vercel.app`
 
-### Manual Deployment
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. The static files will be generated in the `out/` directory
-3. Deploy the contents of the `out/` directory to any static hosting service
-
 ## Customization
 
 ### Personal Information
