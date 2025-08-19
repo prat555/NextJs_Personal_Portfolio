@@ -1,3 +1,13 @@
+/* Minimal static border for Hero profile image */
+.minimal-border {
+  position: relative;
+  padding: 4px;
+  border-radius: 9999px;
+  border: 2px solid #38bdf8; /* Tailwind blue-400 */
+  background: linear-gradient(135deg, #38bdf8 0%, #a21caf 100%);
+  background-clip: padding-box;
+  z-index: 1;
+}
 @import "tailwindcss";
 
 @layer base {

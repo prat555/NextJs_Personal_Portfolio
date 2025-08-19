@@ -1,15 +1,58 @@
 'use client'
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import profileImage from "@/assets/profile.png";
+import profileImage from "@/assets/profile.jpg";
 
 export default function Hero() {
+
+  // Typewriter effect states
+  const [currentWord, setCurrentWord] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const typingSpeed = 80; 
+  const deletingSpeed = 40; 
+  const pauseTime = 1200; 
+
   const socialLinks = [
     { icon: "fab fa-linkedin", href: "https://www.linkedin.com/in/pratyush-goutam-387837250", label: "LinkedIn" },
     { icon: "fab fa-github", href: "https://github.com/prat555", label: "GitHub" },
     { icon: "fas fa-code", href: "https://leetcode.com/u/pratg555/", label: "LeetCode" },
   ];
+
+  const roles = [
+    "Full Stack Developer",
+    "Problem Solver", 
+    "MERN Stack Expert",
+    "Mobile App Developer",
+    "AI Enthusiast"
+  ];
+
+
+  // Typewriter effect logic
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const fullText = roles[currentWord];
+
+    if (!isDeleting && displayedText.length < fullText.length) {
+      timeout = setTimeout(() => {
+        setDisplayedText(fullText.slice(0, displayedText.length + 1));
+      }, typingSpeed);
+    } else if (!isDeleting && displayedText.length === fullText.length) {
+      timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+    } else if (isDeleting && displayedText.length > 0) {
+      timeout = setTimeout(() => {
+        setDisplayedText(fullText.slice(0, displayedText.length - 1));
+      }, deletingSpeed);
+    } else if (isDeleting && displayedText.length === 0) {
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+        setCurrentWord((prev) => (prev + 1) % roles.length);
+      }, 300);
+    }
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentWord]);
 
   return (
     <section
@@ -52,7 +95,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-                      <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent to-blue-500 p-1">
+          <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent to-blue-500 p-1">
             <div className="w-full h-full rounded-full overflow-hidden">
               <Image 
                 src={profileImage} 
@@ -65,6 +108,7 @@ export default function Hero() {
             </div>
           </div>
         </motion.div>
+        
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -79,14 +123,19 @@ export default function Hero() {
             Pratyush <span className="text-accent">Goutam</span>
           </motion.h1>
 
-          <motion.p
+          {/* Animated Role Text */}
+          <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light"
+            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-light h-8 flex items-center justify-center"
+            aria-label="Animated Role Text"
           >
-            Full Stack Developer & Problem Solver
-          </motion.p>
+            <span className="text-gray-600 dark:text-gray-300 font-medium whitespace-nowrap">
+              {displayedText}
+              <span className="inline-block w-px h-6 bg-gray-400 dark:bg-gray-200 ml-1 animate-pulse align-middle rounded-sm" style={{verticalAlign: 'middle'}}></span>
+            </span>
+          </motion.div>
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
