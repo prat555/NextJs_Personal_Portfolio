@@ -1,27 +1,26 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
+  const [logoLineActive, setLogoLineActive] = useState(false);
+  const logoLineTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
       // Update active section based on scroll position
       const sections = ["about", "skills", "projects", "education", "contact"];
       const scrollPosition = window.scrollY + 100;
-      
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section);
             break;
@@ -29,7 +28,6 @@ export default function Navigation() {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -71,16 +69,27 @@ export default function Navigation() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="relative group cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setLogoLineActive(true);
+              if (logoLineTimeout.current) clearTimeout(logoLineTimeout.current);
+              logoLineTimeout.current = setTimeout(() => setLogoLineActive(false), 400); // match duration-300
+            }}
+            onMouseLeave={() => setLogoLineActive(false)}
           >
             <div className="text-xl sm:text-2xl font-bold text-primary dark:text-white">
               <span className="text-accent">P</span>ratyush{" "}
               <span className="text-accent">G</span>outam
             </div>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-accent to-blue-500 group-hover:w-full transition-all duration-300"></div>
+            <div
+              className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-accent to-blue-500 transition-all duration-300
+                ${logoLineActive ? 'w-full' : 'w-0'}
+                group-hover:w-full
+              `}
+            ></div>
           </motion.div>
 
-          {/* Desktop Navigation */}
+    {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item, index) => (
               <motion.button
@@ -107,7 +116,7 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Mobile Menu Controls */}
+    {/* Mobile Menu Controls */}
           <div className="md:hidden flex items-center">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -123,7 +132,7 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+  {/* Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
