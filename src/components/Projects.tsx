@@ -45,19 +45,6 @@ export default function Projects() {
       category: "Web Development",
     },
     {
-      title: "Food Delivery App - React Native Expo",
-      description:
-        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
-      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
-      links: {
-        github: "https://github.com/prat555/Food-Delivery-App",
-      },
-      gradient: "from-orange-400 to-yellow-500",
-      icon: "fas fa-utensils",
-      backgroundImage: foodDeliveryBg,
-      category: "Mobile Development",
-    },
-    {
       title: "EcoVision - AI Waste Classification and Management",
       description:
         "An AI-powered web application that classifies waste through image recognition, helping users make eco-friendly disposal decisions with a chatbot integrated.",
@@ -96,6 +83,19 @@ export default function Projects() {
       icon: "fas fa-brain",
       backgroundImage: neuroBg,
       category: "AI/ML",
+    },
+    {
+      title: "Food Delivery App - React Native Expo",
+      description:
+        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
+      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
+      links: {
+        github: "https://github.com/prat555/Food-Delivery-App",
+      },
+      gradient: "from-orange-400 to-yellow-500",
+      icon: "fas fa-utensils",
+      backgroundImage: foodDeliveryBg,
+      category: "Mobile Development",
     },
     {
       title: "Personal Portfolio V1 - Classic Web Technologies",
