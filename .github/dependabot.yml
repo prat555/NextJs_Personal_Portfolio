@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"  # location of your package.json
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "deps"
     ignore:
