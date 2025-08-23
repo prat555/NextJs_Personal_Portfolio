@@ -79,15 +79,6 @@ src/
 └── assets/              # Images and static files
 ```
 
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Vercel will automatically detect Next.js and deploy
-4. Your site will be available at `https://your-project.vercel.app`
-
 ## Customization
 
 ### Personal Information
@@ -98,12 +89,6 @@ Update the following files with your information:
 - `src/components/Projects.tsx` - Your projects
 - `src/components/Skills.tsx` - Your skills
 - `src/components/Education.tsx` - Education and certifications
-
-### Styling
-
-- Colors and theme: Update `src/app/globals.css`
-- Tailwind config: Modify `tailwind.config.ts`
-- Component styles: Edit individual component files
 
 ### Images
 
@@ -126,16 +111,11 @@ Update the following files with your information:
 4. Test your form to ensure it's working correctly
 5. You'll receive form submissions directly in your email
 
-## Performance & Features
+## Deployment
 
-- Images are optimized with Next.js Image component
-- CSS is purged with Tailwind CSS
-- Static export for optimal performance
-- Lazy loading for better user experience
-- Interactive project cards with hover effects
-- Smooth animations and transitions
-- Mobile-first responsive design
-- Optimized dark theme
-- Carousel for mobile project viewing
-- Contact form with validation
-- SEO optimized structure
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Vercel will automatically detect Next.js and deploy
+4. Your site will be available at `https://your-project.vercel.app`
