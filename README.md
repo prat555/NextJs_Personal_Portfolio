@@ -9,7 +9,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - 🎭 Smooth animations with Framer Motion
 - 🎨 Styled with Tailwind CSS
 - 📱 Mobile-first responsive design
-- 🌙 Dark theme optimization
+- 🌙 Automatically adapts to system theme (light/dark mode)
 - 📧 Contact form with Formspree integration
 - 🚀 Optimized for Vercel deployment
 
