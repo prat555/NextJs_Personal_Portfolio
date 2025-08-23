@@ -112,7 +112,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -132,7 +132,7 @@ export default function Skills() {
                 category.title === "Soft Skills & Other Competencies" ? "hidden lg:block" : ""
               }`}
             >
-              <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center gap-3">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
                 <i className={`${category.icon} text-accent text-xl`}></i>
                 {category.title}
               </h3>

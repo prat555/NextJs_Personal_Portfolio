@@ -100,7 +100,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Let&apos;s <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -121,7 +121,7 @@ export default function Contact() {
                 <i className="fas fa-envelope text-accent text-xl"></i>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-primary dark:text-white">Email</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
                 <a
                   href="mailto:pratyush8600@gmail.com"
                   className="text-gray-600 dark:text-gray-300 hover:text-accent transition-colors duration-300"
@@ -135,7 +135,7 @@ export default function Contact() {
                 <i className="fas fa-phone text-accent text-xl"></i>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-primary dark:text-white">Phone</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Phone</h3>
                 <a
                   href="tel:9315921753"
                   className="text-gray-600 dark:text-gray-300 hover:text-accent transition-colors duration-300"
@@ -149,7 +149,7 @@ export default function Contact() {
                 <i className="fas fa-map-marker-alt text-accent text-xl"></i>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-primary dark:text-white">Location</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Location</h3>
                 <p className="text-gray-600 dark:text-gray-300">Available for remote work globally</p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6">Quick Message</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Quick Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
   type="text"

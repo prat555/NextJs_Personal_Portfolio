@@ -117,7 +117,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary dark:text-white mb-6"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
           >
             Pratyush <span className="text-accent">Goutam</span>
           </motion.h1>

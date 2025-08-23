@@ -73,7 +73,7 @@ export default function Navigation() {
             className="relative group cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="text-xl sm:text-2xl font-bold text-primary dark:text-white">
+            <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
               <span className="text-accent">P</span>ratyush{" "}
               <span className="text-accent">G</span>outam
             </div>

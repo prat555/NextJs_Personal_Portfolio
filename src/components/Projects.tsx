@@ -128,7 +128,7 @@ export default function Projects() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary dark:text-white mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
           >
             Featured <span className="text-gradient bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent">Projects</span>
           </motion.h2>
@@ -222,7 +222,7 @@ export default function Projects() {
                   
                   {/* Project Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-primary dark:text-white mb-3 line-clamp-2">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                       {project.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
@@ -331,7 +331,7 @@ export default function Projects() {
                       
                       {/* Project Content */}
                       <div className="p-4 sm:p-5">
-                        <h3 className="text-lg sm:text-xl font-bold text-primary dark:text-white mb-2 line-clamp-2">
+                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
                           {project.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">

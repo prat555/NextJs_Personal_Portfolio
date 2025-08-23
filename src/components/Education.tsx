@@ -47,7 +47,7 @@ export default function Education() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-primary dark:text-white mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Education & <span className="text-gradient">Certifications</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -64,7 +64,7 @@ export default function Education() {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center gap-3">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
               <i className="fas fa-graduation-cap text-accent"></i>
               Education
             </h3>
@@ -77,7 +77,7 @@ export default function Education() {
                 className="relative pl-8"
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
-                <h4 className="text-xl font-semibold text-primary dark:text-white">
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
                   B.Tech in Computer Science with Business Systems
                 </h4>
                 <p className="text-accent font-medium">SRM Institute of Science and Technology, KTR</p>
@@ -98,7 +98,7 @@ export default function Education() {
                 className="relative pl-8"
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-full"></div>
-                <h4 className="text-xl font-semibold text-primary dark:text-white">
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
                   High School Diploma (CBSE)
                 </h4>
                 <p className="text-accent font-medium">Delhi Public School, Indirapuram</p>
@@ -119,7 +119,7 @@ export default function Education() {
             viewport={{ once: true }}
             className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 className="text-2xl font-semibold text-primary dark:text-white mb-6 flex items-center gap-3">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
               <i className="fas fa-certificate text-accent"></i>
               Certifications
             </h3>
@@ -137,7 +137,7 @@ export default function Education() {
                     <i className={`${cert.icon} text-accent`}></i>
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-primary dark:text-white">{cert.title}</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h4>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{cert.provider}</p>
                   </div>
                   {cert.link && (
