@@ -7,7 +7,7 @@ import aiBg from "@/assets/ecovision.png";
 import neuroBg from "@/assets/nuerorisk.png";
 import movieAppBg from "@/assets/movieapp.png";
 import foodDeliveryBg from "@/assets/food-delivery-app.png";
-import opbg from "@/assets/old-portfolio.png";
+import csTruckBg from "@/assets/cs-truck.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -98,18 +98,18 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
-      title: "Personal Portfolio V1 - Classic Web Technologies",
+      title: "CS-Truck Ordering System",
       description:
-        "My first portfolio website built with classic web technologies, featuring a clean and responsive design, project showcase, and contact form. Demonstrates proficiency in fundamental web development.",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap","Netlify"],
+        "A modern full-stack food truck ordering application with React frontend, Express backend, and Neon PostgreSQL. Features Firebase auth, Razorpay payments, and admin dashboard for order management.",
+      technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "Firebase", "Razorpay"],
       links: {
-        github: "https://github.com/prat555/Old-Portfolio",
-        live: "https://pratyushg.netlify.app/",
+        github: "https://github.com/prat555/CS-Truck",
+        live: "https://cs-truck.onrender.com/",
       },
-      gradient: "from-purple-400 to-pink-500",
-      icon: "fas fa-code",
-      backgroundImage: opbg, 
-      category: "Web Development",
+      gradient: "from-orange-400 to-red-500",
+      icon: "fas fa-truck",
+      backgroundImage: csTruckBg,
+      category: "Full Stack",
     },
   ];
 
