@@ -72,19 +72,6 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
-      title: "NeuroRisk - Drug Risk Prediction Platform",
-      description:
-        "A machine learning platform that predicts substance use risk based on psychological profiles with interactive data visualizations and persistent PostgreSQL risk tracking.",
-      technologies: ["Python", "Numpy", "Streamlit", "Scikit-learn", "PostgreSQL"],
-      links: {
-        github: "https://github.com/prat555/NueroRisk",
-      },
-      gradient: "from-orange-400 to-red-500",
-      icon: "fas fa-brain",
-      backgroundImage: neuroBg,
-      category: "AI/ML",
-    },
-    {
       title: "Food Delivery App - React Native Expo",
       description:
         "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
@@ -96,6 +83,19 @@ export default function Projects() {
       icon: "fas fa-utensils",
       backgroundImage: foodDeliveryBg,
       category: "Mobile Development",
+    },
+    {
+      title: "NeuroRisk - Drug Risk Prediction Platform",
+      description:
+        "A machine learning platform that predicts substance use risk based on psychological profiles with interactive data visualizations and persistent PostgreSQL risk tracking.",
+      technologies: ["Python", "Numpy", "Streamlit", "Scikit-learn", "PostgreSQL"],
+      links: {
+        github: "https://github.com/prat555/NueroRisk",
+      },
+      gradient: "from-orange-400 to-red-500",
+      icon: "fas fa-brain",
+      backgroundImage: neuroBg,
+      category: "AI/ML",
     },
     {
       title: "CS-Truck - Production-Ready Food Ordering System",
