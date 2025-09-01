@@ -98,7 +98,7 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
-      title: "CS-Truck - Food Ordering System",
+      title: "CS-Truck - Production-Ready Food Ordering System",
       description:
         "A modern full-stack food truck ordering application with React frontend, Express backend, and Neon PostgreSQL. Features Firebase auth, Razorpay payments, and admin dashboard for order management.",
       technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "Firebase", "Razorpay"],
