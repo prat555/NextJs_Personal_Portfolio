@@ -59,17 +59,18 @@ export default function Projects() {
       category: "AI/ML",
     },
     {
-      title: "Xylo - React Native Movie App made with Expo",
+      title: "CS-Truck - Production-Ready Food Ordering System",
       description:
-        "A modern React Native movie app with Expo featuring movie browsing, detailed views, interactive elements like likes and downloads, and a sleek dark theme UI design.",
-      technologies: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
+        "A modern full-stack food truck ordering application with React frontend, Express backend, and Neon PostgreSQL. Features Firebase auth, Razorpay payments, and admin dashboard for order management.",
+      technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "Firebase", "Razorpay"],
       links: {
-        github: "https://github.com/prat555/Movie-App",
+        github: "https://github.com/prat555/CS-Truck",
+        live: "https://cs-truck.onrender.com/",
       },
-      gradient: "from-blue-400 to-indigo-500",
-      icon: "fas fa-film",
-      backgroundImage: movieAppBg,
-      category: "Mobile Development",
+      gradient: "from-orange-400 to-red-500",
+      icon: "fas fa-truck",
+      backgroundImage: csTruckBg,
+      category: "Full Stack",
     },
     {
       title: "Food Delivery App - React Native Expo",
@@ -85,6 +86,19 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
+      title: "Xylo - React Native Movie App made with Expo",
+      description:
+        "A modern React Native movie app with Expo featuring movie browsing, detailed views, interactive elements like likes and downloads, and a sleek dark theme UI design.",
+      technologies: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
+      links: {
+        github: "https://github.com/prat555/Movie-App",
+      },
+      gradient: "from-blue-400 to-indigo-500",
+      icon: "fas fa-film",
+      backgroundImage: movieAppBg,
+      category: "Mobile Development",
+    },
+    {
       title: "NeuroRisk - Drug Risk Prediction Platform",
       description:
         "A machine learning platform that predicts substance use risk based on psychological profiles with interactive data visualizations and persistent PostgreSQL risk tracking.",
@@ -96,20 +110,6 @@ export default function Projects() {
       icon: "fas fa-brain",
       backgroundImage: neuroBg,
       category: "AI/ML",
-    },
-    {
-      title: "CS-Truck - Production-Ready Food Ordering System",
-      description:
-        "A modern full-stack food truck ordering application with React frontend, Express backend, and Neon PostgreSQL. Features Firebase auth, Razorpay payments, and admin dashboard for order management.",
-      technologies: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle ORM", "Firebase", "Razorpay"],
-      links: {
-        github: "https://github.com/prat555/CS-Truck",
-        live: "https://cs-truck.onrender.com/",
-      },
-      gradient: "from-orange-400 to-red-500",
-      icon: "fas fa-truck",
-      backgroundImage: csTruckBg,
-      category: "Full Stack",
     },
   ];
 
