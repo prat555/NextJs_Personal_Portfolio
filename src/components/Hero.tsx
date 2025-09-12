@@ -20,7 +20,7 @@ export default function Hero() {
   useEffect(() => {
     const generateDots = () => {
       const newDots = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 20; i++) {
         newDots.push({
           id: i,
           x: Math.random() * 100,
