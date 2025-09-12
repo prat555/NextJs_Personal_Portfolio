@@ -182,8 +182,8 @@ export default function Contact() {
   value={formData.email}
   onChange={handleChange}
   required
-  autoComplete="email"  // <-- added
-  className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-900 placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
+  autoComplete="email"
+  className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:ring-accent focus:border-accent"
 />
 
 <Textarea
