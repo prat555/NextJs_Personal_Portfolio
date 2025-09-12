@@ -37,12 +37,17 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
+      // Close mobile menu first
       setIsMenuOpen(false);
+      
+      // Add a small delay to allow menu close animation, then scroll
+      setTimeout(() => {
+        const offsetTop = element.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }, 300);
     }
   };
 
@@ -131,7 +136,7 @@ export default function Navigation() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 rounded-b-2xl"
+              className="md:hidden overflow-hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 rounded-b-2xl shadow-lg"
             >
               <div className="px-4 py-4 space-y-2">
                 {navItems.map((item, index) => (
@@ -141,10 +146,14 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-3 w-full text-left px-4 py-3 rounded-xl transition-all duration-300 ${
+                    onTouchEnd={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
+                    className={`flex items-center space-x-3 w-full text-left px-4 py-3 rounded-xl transition-all duration-300 cursor-pointer touch-manipulation ${
                       activeSection === item.id
                         ? "text-accent bg-accent/10"
-                        : "text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent hover:bg-accent/5"
+                        : "text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent hover:bg-accent/5 active:bg-accent/10"
                     }`}
                   >
                     <i className={`${item.icon} text-sm w-4`}></i>

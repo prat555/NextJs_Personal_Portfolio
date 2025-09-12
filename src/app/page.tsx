@@ -7,7 +7,7 @@ import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden">
       <Navigation />
       <Hero />
       <Skills />
