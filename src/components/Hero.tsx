@@ -6,6 +6,34 @@ import Image from "next/image";
 import profileImage from "@/assets/profile.jpg";
 
 export default function Hero() {
+  // Generate random dots for background animation
+  const [dots, setDots] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    duration: number;
+    delay: number;
+  }>>([]);
+
+  // Initialize dots on component mount
+  useEffect(() => {
+    const generateDots = () => {
+      const newDots = [];
+      for (let i = 0; i < 15; i++) {
+        newDots.push({
+          id: i,
+          x: Math.random() * 100,
+          y: Math.random() * 100,
+          size: Math.random() * 3 + 3, // Increased size range: 3-9px
+          duration: Math.random() * 4 + 4, // 4-12 seconds
+          delay: Math.random() * 2, // 0-3 seconds delay
+        });
+      }
+      setDots(newDots);
+    };
+    generateDots();
+  }, []);
 
   // Typewriter effect states
   const [currentWord, setCurrentWord] = useState(0);
@@ -60,6 +88,35 @@ export default function Hero() {
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+
+      {/* Floating Dots Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {dots.map((dot) => (
+          <motion.div
+            key={dot.id}
+            className="absolute rounded-full bg-blue-500/30 dark:bg-blue-400/40 shadow-lg"
+            style={{
+              left: `${dot.x}%`,
+              top: `${dot.y}%`,
+              width: `${dot.size}px`,
+              height: `${dot.size}px`,
+              filter: 'blur(0.5px)',
+            }}
+            animate={{
+              y: [0, -30, 0],
+              x: [0, Math.sin(dot.id) * 20, 0],
+              opacity: [0.4, 0.9, 0.4],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: dot.duration,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: dot.delay,
+            }}
+          />
+        ))}
+      </div>
 
       {/* Floating Elements */}
       <motion.div
