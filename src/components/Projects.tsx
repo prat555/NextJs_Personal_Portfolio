@@ -8,6 +8,7 @@ import neuroBg from "@/assets/nuerorisk.png";
 import movieAppBg from "@/assets/movieapp.png";
 import foodDeliveryBg from "@/assets/food-delivery-app.png";
 import csTruckBg from "@/assets/cs-truck.png";
+import chatbot from "@/assets/chatbot.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -73,17 +74,31 @@ export default function Projects() {
       category: "Full Stack",
     },
     {
-      title: "Food Delivery App - React Native Expo",
+      title: "Voice-Interactive Chatbot using Gemini 2.5 Flash",
       description:
-        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
-      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
+        "A modern, voice-enabled chatbot powered by Google Gemini with speech recognition and text-to-speech (TTS). Features include a sleek, responsive UI with dark mode, quick suggestions, and customizable voice settings.",
+      technologies: ["Node.js", "Express", "Gemini API", "JavaScript", "Vercel"],
       links: {
-        github: "https://github.com/prat555/Food-Delivery-App",
+        github: "https://github.com/prat555/Voice_Enabled_Chatbot",
+        live: "https://chatbot-ecru-alpha.vercel.app/",
       },
-      gradient: "from-orange-400 to-yellow-500",
-      icon: "fas fa-utensils",
-      backgroundImage: foodDeliveryBg,
-      category: "Mobile Development",
+      gradient: "from-purple-400 to-pink-500",
+      icon: "fas fa-robot",
+      backgroundImage: chatbot,
+      category: "Full Stack",
+    },
+    {
+      title: "NeuroRisk - Drug Risk Prediction Platform",
+      description:
+        "A machine learning platform that predicts substance use risk based on psychological profiles with interactive data visualizations and persistent PostgreSQL risk tracking.",
+      technologies: ["Python", "Numpy", "Streamlit", "Scikit-learn", "PostgreSQL"],
+      links: {
+        github: "https://github.com/prat555/NueroRisk",
+      },
+      gradient: "from-orange-400 to-red-500",
+      icon: "fas fa-brain",
+      backgroundImage: neuroBg,
+      category: "AI/ML",
     },
     {
       title: "Xylo - React Native Movie App made with Expo",
@@ -99,17 +114,17 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
-      title: "NeuroRisk - Drug Risk Prediction Platform",
+      title: "Food Delivery App - React Native Expo",
       description:
-        "A machine learning platform that predicts substance use risk based on psychological profiles with interactive data visualizations and persistent PostgreSQL risk tracking.",
-      technologies: ["Python", "Numpy", "Streamlit", "Scikit-learn", "PostgreSQL"],
+        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
+      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
       links: {
-        github: "https://github.com/prat555/NueroRisk",
+        github: "https://github.com/prat555/Food-Delivery-App",
       },
-      gradient: "from-orange-400 to-red-500",
-      icon: "fas fa-brain",
-      backgroundImage: neuroBg,
-      category: "AI/ML",
+      gradient: "from-orange-400 to-yellow-500",
+      icon: "fas fa-utensils",
+      backgroundImage: foodDeliveryBg,
+      category: "Mobile Development",
     },
   ];
 
@@ -143,122 +158,8 @@ export default function Projects() {
           </motion.p>
         </motion.div>
 
-        {/* Desktop Grid View */}
-        <div className="hidden lg:block">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative"
-                onMouseEnter={() => setHoveredProject(index)}
-                onMouseLeave={() => setHoveredProject(null)}
-              >
-                <div className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-                  {/* Project Image */}
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
-                    <Image
-                      src={project.backgroundImage}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-xs font-semibold text-gray-800 dark:text-gray-200 rounded-full">
-                        {project.category}
-                      </span>
-                    </div>
-                    
-                    {/* Project Icon */}
-                    <div className="absolute bottom-4 left-4">
-                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <i className={`${project.icon} text-white text-xl`}></i>
-                      </div>
-                    </div>
-                    
-                    {/* Action Buttons */}
-                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      {project.links.github && (
-                        <motion.a
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
-                          title="View Code"
-                        >
-                          <i className="fab fa-github text-sm"></i>
-                        </motion.a>
-                      )}
-                      {project.links.live && (
-                        <motion.a
-                          href={project.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
-                          title="Live Demo"
-                        >
-                          <i className="fas fa-external-link-alt text-sm"></i>
-                        </motion.a>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* Project Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p>
-                    
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 4).map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
-                          +{project.technologies.length - 4}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* Hover Glow Effect */}
-                  {hoveredProject === index && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-600/5 to-indigo-500/5 rounded-2xl pointer-events-none"></div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Mobile/Tablet Carousel View */}
-        <div className="lg:hidden">
+        {/* Main Carousel View - All Screen Sizes */}
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -269,98 +170,113 @@ export default function Projects() {
               className="w-full" 
               opts={{ 
                 loop: true,
-                align: "center",
+                align: "start",
+                skipSnaps: false,
+                dragFree: true,
               }} 
-              plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
+              plugins={[Autoplay({ delay: 3000, stopOnInteraction: true })]}
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4 lg:-ml-6">
                 {projects.map((project, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-[70%] md:basis-1/2">
-                    <div className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 lg:pl-6 basis-[85%] sm:basis-[70%] md:basis-[60%] lg:basis-[45%] xl:basis-[33.333%] 2xl:basis-[30%]">
+                    <div 
+                      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                      onMouseEnter={() => setHoveredProject(index)}
+                      onMouseLeave={() => setHoveredProject(null)}
+                    >
                       {/* Project Image */}
-                      <div className="relative h-44 sm:h-48 overflow-hidden">
+                      <div className="relative h-48 sm:h-56 overflow-hidden">
                         <Image
                           src={project.backgroundImage}
                           alt={project.title}
                           fill
-                          sizes="100vw"
-                          className="object-cover"
+                          sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 45vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                         
                         {/* Category Badge */}
-                        <div className="absolute top-3 left-3">
-                          <span className="px-2 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-xs font-semibold text-gray-800 dark:text-gray-200 rounded-full">
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-xs font-semibold text-gray-800 dark:text-gray-200 rounded-full">
                             {project.category}
                           </span>
                         </div>
                         
                         {/* Project Icon */}
-                        <div className="absolute bottom-3 left-3">
-                          <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <i className={`${project.icon} text-white text-lg`}></i>
+                        <div className="absolute bottom-4 left-4">
+                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <i className={`${project.icon} text-white text-xl`}></i>
                           </div>
                         </div>
                         
                         {/* Action Buttons */}
-                        <div className="absolute top-3 right-3 flex gap-2">
+                        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                           {project.links.github && (
-                            <a
+                            <motion.a
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-8 h-8 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                               title="View Code"
                             >
-                              <i className="fab fa-github text-xs"></i>
-                            </a>
+                              <i className="fab fa-github text-sm"></i>
+                            </motion.a>
                           )}
                           {project.links.live && (
-                            <a
+                            <motion.a
                               href={project.links.live}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-8 h-8 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                               title="Live Demo"
                             >
-                              <i className="fas fa-external-link-alt text-xs"></i>
-                            </a>
+                              <i className="fas fa-external-link-alt text-sm"></i>
+                            </motion.a>
                           )}
                         </div>
                       </div>
                       
                       {/* Project Content */}
-                      <div className="p-4 sm:p-5">
-                        <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm leading-relaxed line-clamp-2">
+                        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
                           {project.description}
                         </p>
                         
                         {/* Technologies */}
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.technologies.slice(0, 4).map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="px-2 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium"
+                              className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium"
                             >
                               {tech}
                             </span>
                           ))}
-                          {project.technologies.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
-                              +{project.technologies.length - 3}
+                          {project.technologies.length > 4 && (
+                            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
+                              +{project.technologies.length - 4}
                             </span>
                           )}
                         </div>
                       </div>
+                      
+                      {/* Hover Glow Effect */}
+                      {hoveredProject === index && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-600/5 to-indigo-500/5 rounded-2xl pointer-events-none"></div>
+                      )}
                     </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex -left-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700" />
-              <CarouselNext className="hidden sm:flex -right-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700" />
+              <CarouselPrevious className="hidden sm:flex -left-4 lg:-left-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700" />
+              <CarouselNext className="hidden sm:flex -right-4 lg:-right-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700" />
             </Carousel>
           </motion.div>
         </div>
