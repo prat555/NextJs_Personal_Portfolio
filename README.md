@@ -5,9 +5,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 ## Features
 
 - Modern, responsive design with dark/light theme support
-- Built with Next.js 14 App Router
 - Smooth animations with Framer Motion
-- Styled with Tailwind CSS
 - Mobile-first responsive design
 - Automatically adapts to system theme (light/dark mode)
 - Contact form with Formspree integration
