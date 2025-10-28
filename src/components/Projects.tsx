@@ -121,6 +121,7 @@ export default function Projects() {
     technologies: ["NextJS 16","Google Gemini API", "TypeScript", "TailwindCSS", "Vercel"],
       links: {
         github: "https://github.com/prat555/VidhiSetu_Legal_Assistant",
+        live: "https://vidhisetu.vercel.app/",
       },
       gradient: "from-orange-400 to-yellow-500",
       icon: "fas fa-balance-scale",
