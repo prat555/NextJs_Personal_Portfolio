@@ -9,6 +9,7 @@ import movieAppBg from "@/assets/movieapp.png";
 import foodDeliveryBg from "@/assets/food-delivery-app.png";
 import csTruckBg from "@/assets/cs-truck.png";
 import chatbot from "@/assets/chatbot.png";
+import vidhi from "@/assets/vidhisetu.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -112,6 +113,19 @@ export default function Projects() {
       icon: "fas fa-film",
       backgroundImage: movieAppBg,
       category: "Mobile Development",
+    },
+    {
+      title: "VidhiSetu - AI Legal Assistant for Indian Law",
+      description:
+        "AI-powered legal assistant for Indian law. Get instant guidance on constitutional, criminal, civil, and corporate law matters. Built with Next.js, TypeScript, and Google Gemini API.",
+    technologies: ["NextJS 16","Google Gemini API", "TypeScript", "TailwindCSS", "Vercel"],
+      links: {
+        github: "https://github.com/prat555/VidhiSetu_Legal_Assistant",
+      },
+      gradient: "from-orange-400 to-yellow-500",
+      icon: "fas fa-balance-scale",
+      backgroundImage: vidhi,
+      category: "Full Stack",
     },
     {
       title: "Food Delivery App - React Native Expo",
