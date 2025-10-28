@@ -50,7 +50,7 @@ export default function Projects() {
       title: "EcoVision - AI Waste Classification and Management",
       description:
         "An AI-powered web application that classifies waste through image recognition, helping users make eco-friendly disposal decisions with a chatbot integrated.",
-      technologies: ["React", "Vite", "TypeScript", "DeepSeek R1 API", "PostgreSQL"],
+      technologies: ["React", "Vite", "TypeScript", "Google API", "PostgreSQL"],
       links: {
         github: "https://github.com/prat555/EcoVision",
         live: "https://ecovisionscan.onrender.com/",
