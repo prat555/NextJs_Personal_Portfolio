@@ -55,7 +55,7 @@ export default function Education() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-9 lg:gap-12">
           {/* Education */}
           <motion.div
             initial={{ x: -50, opacity: 0 }}
