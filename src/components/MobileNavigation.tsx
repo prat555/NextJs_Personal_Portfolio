@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileNavigationProps {
-  sections: React.RefObject<HTMLDivElement>[];
+  sections: React.RefObject<HTMLDivElement | null>[];
   activeSection: number;
   onNavigate: (index: number) => void;
 }
