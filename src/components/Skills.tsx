@@ -36,12 +36,11 @@ export default function Skills() {
       { name: "Node.js", icon: "fab fa-node-js" },
       { name: "Next.js", icon: "fas fa-server" },
       { name: "React Native", icon: "fab fa-react" },
-      { name: "Tailwind CSS", icon: "fas fa-palette" },
+      { name: "PostgreSQL", icon: "fas fa-database" },
       { name: "Git", icon: "fab fa-git-alt" },
       { name: "MongoDB", icon: "fas fa-leaf" },
       { name: "MySQL", icon: "fas fa-database" },
       { name: "Redis", icon: "fas fa-memory" },
-      { name: "PostgreSQL", icon: "fas fa-database" },
     ],
   },
   {
@@ -103,14 +102,14 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" className="pt-8 pb-16 md:py-20 md:pb-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Skills & <span className="text-gradient">Technologies</span>

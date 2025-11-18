@@ -91,14 +91,14 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-white dark:bg-gray-800">
+    <section id="contact" className="py-12 md:py-16 pb-28 md:pb-16 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Let&apos;s <span className="text-gradient">Connect</span>
@@ -108,13 +108,13 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
@@ -144,7 +144,7 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
                 <i className="fas fa-map-marker-alt text-accent text-xl"></i>
               </div>
@@ -223,7 +223,7 @@ export default function Contact() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-600"
+          className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-600 hidden md:block"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left mb-4 md:mb-0">

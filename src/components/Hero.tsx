@@ -84,7 +84,7 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-16 pb-16 md:pb-0"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
@@ -206,7 +206,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-0 md:mb-12"
           >
             <motion.a
               href="/resume.pdf"
@@ -234,7 +234,7 @@ export default function Hero() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="flex justify-center space-x-6 mb-16 sm:mb-12"
+            className="hidden md:flex justify-center space-x-6 mb-16 sm:mb-12"
           >
             {socialLinks.map((link, index) => (
               <motion.a

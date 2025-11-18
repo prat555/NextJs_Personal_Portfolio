@@ -144,21 +144,21 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section id="projects" className="py-12 sm:py-20 pb-16 md:pb-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, staggerChildren: 0.1 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-16"
         >
           <motion.h2 
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6"
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-4"
           >
             Featured <span className="text-gradient bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent">Projects</span>
           </motion.h2>
@@ -193,39 +193,39 @@ export default function Projects() {
             >
               <CarouselContent className="-ml-2 md:-ml-4 lg:-ml-6">
                 {projects.map((project, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 lg:pl-6 basis-[85%] sm:basis-[70%] md:basis-[60%] lg:basis-[45%] xl:basis-[33.333%] 2xl:basis-[30%]">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 lg:pl-6 basis-[90%] sm:basis-[70%] md:basis-[60%] lg:basis-[45%] xl:basis-[33.333%] 2xl:basis-[30%]">
                     <div 
-                      className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+                      className="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full"
                       onMouseEnter={() => setHoveredProject(index)}
                       onMouseLeave={() => setHoveredProject(null)}
                     >
                       {/* Project Image */}
-                      <div className="relative h-48 sm:h-56 overflow-hidden">
+                      <div className="relative h-52 md:h-56 overflow-hidden">
                         <Image
                           src={project.backgroundImage}
                           alt={project.title}
                           fill
-                          sizes="(max-width: 640px) 85vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 45vw, 33vw"
+                          sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 45vw, 33vw"
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent md:from-black/60 md:via-black/20"></div>
                         
-                        {/* Category Badge */}
-                        <div className="absolute top-4 left-4">
+                        {/* Category Badge - Desktop Only */}
+                        <div className="hidden md:block absolute top-4 left-4">
                           <span className="px-3 py-1 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-xs font-semibold text-gray-800 dark:text-gray-200 rounded-full">
                             {project.category}
                           </span>
                         </div>
                         
-                        {/* Project Icon */}
-                        <div className="absolute bottom-4 left-4">
+                        {/* Project Icon - Desktop Only */}
+                        <div className="hidden md:block absolute bottom-4 left-4">
                           <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                             <i className={`${project.icon} text-white text-xl`}></i>
                           </div>
                         </div>
                         
-                        {/* Action Buttons */}
-                        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        {/* Action Buttons - Always visible on mobile, hover on desktop */}
+                        <div className="absolute top-3 right-3 md:top-4 md:right-4 flex gap-2 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 md:transform md:translate-y-2 md:group-hover:translate-y-0">
                           {project.links.github && (
                             <motion.a
                               href={project.links.github}
@@ -233,7 +233,7 @@ export default function Projects() {
                               rel="noopener noreferrer"
                               whileHover={{ scale: 1.1 }}
                               whileTap={{ scale: 0.95 }}
-                              className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                              className="w-9 h-9 md:w-10 md:h-10 bg-gray-800/70 md:bg-gray-500/50 backdrop-blur-sm hover:bg-gray-900/80 md:hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                               title="View Code"
                             >
                               <i className="fab fa-github text-sm"></i>
@@ -246,36 +246,43 @@ export default function Projects() {
                               rel="noopener noreferrer"
                               whileHover={{ scale: 1.1 }}
                               whileTap={{ scale: 0.95 }}
-                              className="w-10 h-10 bg-gray-500/50 backdrop-blur-sm hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
+                              className="w-9 h-9 md:w-10 md:h-10 bg-gray-800/70 md:bg-gray-500/50 backdrop-blur-sm hover:bg-gray-900/80 md:hover:bg-gray-600/55 text-white rounded-full flex items-center justify-center transition-all duration-300"
                               title="Live Demo"
                             >
                               <i className="fas fa-external-link-alt text-sm"></i>
                             </motion.a>
                           )}
                         </div>
+
+                        {/* Mobile: Category at bottom */}
+                        <div className="md:hidden absolute bottom-3 left-3">
+                          <span className="px-2.5 py-1 bg-accent/90 backdrop-blur-sm text-[10px] font-bold text-white rounded-full">
+                            {project.category}
+                          </span>
+                        </div>
                       </div>
                       
                       {/* Project Content */}
-                      <div className="p-6">
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                      <div className="p-4 md:p-6">
+                        <h3 className="text-xl md:text-xl font-bold text-gray-900 dark:text-white mb-2 md:mb-3 line-clamp-2 leading-tight">
                           {project.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                        <p className="text-base md:text-base text-gray-600 dark:text-gray-300 mb-3 md:mb-4 leading-relaxed line-clamp-2 md:line-clamp-3">
                           {project.description}
                         </p>
                         
                         {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {project.technologies.slice(0, 4).map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs font-medium"
+                              className="px-2.5 md:px-3 py-1 md:py-1 bg-accent/10 text-accent rounded-full text-xs md:text-xs font-medium"
                             >
                               {tech}
                             </span>
                           ))}
                           {project.technologies.length > 4 && (
-                            <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs font-medium">
+                            <span className="px-2.5 md:px-3 py-1 md:py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-xs md:text-xs font-medium">
                               +{project.technologies.length - 4}
                             </span>
                           )}
@@ -284,7 +291,7 @@ export default function Projects() {
                       
                       {/* Hover Glow Effect */}
                       {hoveredProject === index && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-600/5 to-indigo-500/5 rounded-2xl pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-blue-600/5 to-indigo-500/5 rounded-3xl pointer-events-none"></div>
                       )}
                     </div>
                   </CarouselItem>

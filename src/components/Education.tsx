@@ -38,14 +38,14 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="education" className="pt-8 pb-16 md:py-20 md:pb-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Education & <span className="text-gradient">Certifications</span>
