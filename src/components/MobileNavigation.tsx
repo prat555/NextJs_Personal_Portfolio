@@ -12,33 +12,16 @@ interface MobileNavigationProps {
 export default function MobileNavigation({ sections, activeSection, onNavigate }: MobileNavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [showLogoLine, setShowLogoLine] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
       // Set scrolled state for background blur
-      setScrolled(currentScrollY > 50);
-      
-      // Hide/show header based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
-        setIsVisible(false);
-        setIsMenuOpen(false); // Close menu when hiding header
-      } else {
-        // Scrolling up
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navItems = [
     { id: 0, label: "About", icon: "fas fa-user" },
@@ -58,10 +41,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
   return (
     <>
       {/* Fixed Mobile Header */}
-      <motion.div
-        initial={{ y: 0 }}
-        animate={{ y: isVisible ? 0 : -100 }}
-        transition={{ duration: 0.3 }}
+      <div
         className={`md:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg"
@@ -75,7 +55,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
               window.scrollTo({ top: 0, behavior: 'smooth' });
               onNavigate(0);
             }}
-            className="text-xl font-bold text-gray-900 dark:text-white cursor-pointer"
+            className="text-2xl font-bold text-gray-900 dark:text-white cursor-pointer"
           >
             <span className="text-accent">P</span>ratyush <span className="text-accent">G</span>outam
           </div>
@@ -93,11 +73,11 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
             />
           </button>
         </div>
-      </motion.div>
+      </div>
 
       {/* Hamburger Menu Dropdown */}
       <AnimatePresence>
-        {isMenuOpen && isVisible && (
+        {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

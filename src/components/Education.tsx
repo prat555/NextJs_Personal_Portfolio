@@ -131,24 +131,35 @@ export default function Education() {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-accent/10 dark:hover:bg-accent/20 transition-colors duration-300 group"
                 >
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                    <i className={`${cert.icon} text-accent`}></i>
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{cert.provider}</p>
-                  </div>
-                  {cert.link && (
+                  {cert.link ? (
                     <a
                       href={cert.link}
-                      className="text-accent hover:text-accent/80 transition-colors duration-300 opacity-0 group-hover:opacity-100"
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      onTouchStart={(e) => e.stopPropagation()}
+                      className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:bg-accent/10 dark:hover:bg-accent/20 transition-colors duration-300 group cursor-pointer touch-manipulation"
                     >
-                      <i className="fas fa-external-link-alt"></i>
+                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
+                        <i className={`${cert.icon} text-accent`}></i>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{cert.provider}</p>
+                      </div>
+                      <i className="fas fa-external-link-alt text-accent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 shrink-0"></i>
                     </a>
+                  ) : (
+                    <div className="flex items-center gap-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                      <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center shrink-0">
+                        <i className={`${cert.icon} text-accent`}></i>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-gray-900 dark:text-white">{cert.title}</h4>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{cert.provider}</p>
+                      </div>
+                    </div>
                   )}
                 </motion.div>
               ))}

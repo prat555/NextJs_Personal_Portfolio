@@ -13,8 +13,6 @@ import ScrollToTop from '@/components/ScrollToTop'
 export default function Home() {
   const [activeSection, setActiveSection] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
   
   const heroRef = useRef<HTMLDivElement>(null)
   const skillsRef = useRef<HTMLDivElement>(null)
@@ -47,34 +45,6 @@ export default function Home() {
     }
   }
 
-  // Handle touch swipe on mobile
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!isMobile) return
-    setTouchStart(e.targetTouches[0].clientY)
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isMobile) return
-    setTouchEnd(e.targetTouches[0].clientY)
-  }
-
-  const handleTouchEnd = () => {
-    if (!isMobile) return
-    
-    const swipeDistance = touchStart - touchEnd
-    const minSwipeDistance = 50
-
-    if (Math.abs(swipeDistance) > minSwipeDistance) {
-      if (swipeDistance > 0 && activeSection < sectionRefs.length - 1) {
-        // Swipe up - next section
-        handleNavigate(activeSection + 1)
-      } else if (swipeDistance < 0 && activeSection > 0) {
-        // Swipe down - previous section
-        handleNavigate(activeSection - 1)
-      }
-    }
-  }
-
   // Track active section based on scroll position on mobile
   useEffect(() => {
     if (!isMobile) return
@@ -101,9 +71,6 @@ export default function Home() {
   return (
     <div 
       className="min-h-screen bg-white dark:bg-gray-900 overflow-x-hidden"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
     >
       {/* Desktop Navigation */}
       <Navigation />
