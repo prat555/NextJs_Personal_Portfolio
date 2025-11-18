@@ -130,7 +130,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-accent/10 dark:hover:bg-accent/20 hover:text-accent dark:hover:text-accent transition-all duration-200"
                 >
-                  <i className={`${link.icon} text-base w-5 text-blue-500`}></i>
+                  <i className={`${link.icon} text-base w-5 text-accent`}></i>
                   <span className="text-sm font-medium">{link.label}</span>
                 </motion.a>
                 ))}
