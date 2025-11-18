@@ -110,7 +110,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed top-[60px] right-4 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-xl rounded-2xl overflow-hidden"
+            className="md:hidden fixed top-[60px] right-4 z-40 bg-white dark:bg-gray-800 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-xl rounded-2xl overflow-hidden"
           >
             <div className="w-44">
               <div className="px-4 pt-3 pb-2">
@@ -128,9 +128,9 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-accent/10 dark:hover:bg-accent/20 hover:text-accent dark:hover:text-accent transition-all duration-200"
+                  className="flex items-center space-x-3 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-accent/10 dark:hover:bg-accent/20 hover:text-accent dark:hover:text-accent transition-all duration-200"
                 >
-                  <i className={`${link.icon} text-base w-5`}></i>
+                  <i className={`${link.icon} text-base w-5 text-blue-500`}></i>
                   <span className="text-sm font-medium">{link.label}</span>
                 </motion.a>
                 ))}
