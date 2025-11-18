@@ -110,7 +110,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed top-[60px] right-4 z-40 bg-white dark:bg-gray-800 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-xl rounded-2xl overflow-hidden"
+            className="md:hidden fixed top-[60px] right-4 z-40 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 shadow-2xl rounded-2xl overflow-hidden"
           >
             <div className="w-44">
               <div className="px-4 pt-3 pb-2">
