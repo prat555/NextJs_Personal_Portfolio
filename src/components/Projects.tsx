@@ -115,6 +115,19 @@ export default function Projects() {
       category: "Mobile Development",
     },
     {
+      title: "Food Delivery App - React Native Expo",
+      description:
+        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
+      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
+      links: {
+        github: "https://github.com/prat555/Food-Delivery-App",
+      },
+      gradient: "from-orange-400 to-yellow-500",
+      icon: "fas fa-utensils",
+      backgroundImage: foodDeliveryBg,
+      category: "Mobile Development",
+    },
+    {
       title: "VidhiSetu - AI Legal Assistant for Indian Law",
       description:
         "AI-powered legal assistant for Indian law. Get instant guidance on constitutional, criminal, civil, and corporate law matters. Built with Next.js, TypeScript, and Google Gemini API.",
@@ -127,19 +140,6 @@ export default function Projects() {
       icon: "fas fa-balance-scale",
       backgroundImage: vidhi,
       category: "Full Stack",
-    },
-    {
-      title: "Food Delivery App - React Native Expo",
-      description:
-        "A modern React Native food delivery app with Expo featuring clean UI, seamless payment integration, real-time order tracking, and Appwrite backend.",
-      technologies: ["React Native", "Expo", "Appwrite", "Stripe", "Zustand", "Sentry"],
-      links: {
-        github: "https://github.com/prat555/Food-Delivery-App",
-      },
-      gradient: "from-orange-400 to-yellow-500",
-      icon: "fas fa-utensils",
-      backgroundImage: foodDeliveryBg,
-      category: "Mobile Development",
     },
   ];
 
@@ -185,7 +185,7 @@ export default function Projects() {
               className="w-full" 
               opts={{ 
                 loop: true,
-                align: "start",
+                align: "center",
                 skipSnaps: false,
                 dragFree: true,
               }} 
