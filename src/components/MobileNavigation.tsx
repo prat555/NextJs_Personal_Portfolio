@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface MobileNavigationProps {
@@ -12,6 +12,8 @@ interface MobileNavigationProps {
 export default function MobileNavigation({ sections, activeSection, onNavigate }: MobileNavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +24,29 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        buttonRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   const navItems = [
     { id: 0, label: "About", icon: "fas fa-user" },
@@ -62,6 +87,7 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
           
           {/* Hamburger Menu */}
           <button
+            ref={buttonRef}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-all duration-300"
             aria-label="Toggle menu"
@@ -79,14 +105,20 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            ref={menuRef}
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed top-[60px] right-4 z-40 bg-white dark:bg-gray-800 backdrop-blur-md border border-gray-200 dark:border-gray-700 shadow-xl rounded-2xl overflow-hidden"
+            className="md:hidden fixed top-[60px] right-4 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-xl rounded-2xl overflow-hidden"
           >
-            <div className="py-2 w-44">
-              {socialLinks.map((link, index) => (
+            <div className="w-44">
+              <div className="px-4 pt-3 pb-2">
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Socials</h3>
+              </div>
+              <hr className="border-gray-200 dark:border-gray-700" />
+              <div className="py-2">
+                {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
                   href={link.href}
@@ -101,7 +133,8 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
                   <i className={`${link.icon} text-base w-5`}></i>
                   <span className="text-sm font-medium">{link.label}</span>
                 </motion.a>
-              ))}
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
