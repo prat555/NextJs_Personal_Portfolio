@@ -142,12 +142,12 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
 
       {/* Bottom Navigation */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-200/50 dark:border-gray-700/50 shadow-lg">
-        <div className="flex justify-around items-center px-2 py-2">
+        <div className="flex justify-around items-center px-2 py-1.5">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => onNavigate(item.id)}
-              className={`flex flex-col items-center justify-center flex-1 py-1.5 px-1 rounded-xl transition-all duration-300 relative ${
+              className={`flex flex-col items-center justify-center flex-1 py-1.5 px-1 rounded-xl transition-all duration-300 ${
                 activeSection === item.id
                   ? "text-accent"
                   : "text-gray-500 dark:text-gray-400"
@@ -155,15 +155,6 @@ export default function MobileNavigation({ sections, activeSection, onNavigate }
             >
               <i className={`${item.icon} text-lg mb-0.5`}></i>
               <span className="text-[10.5px] font-medium">{item.label}</span>
-              
-              {/* Blue indicator under active section */}
-              {activeSection === item.id && (
-                <motion.div
-                  layoutId="activeIndicator"
-                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-11 h-1 bg-blue-500 rounded-t-full"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.3 }}
-                />
-              )}
             </button>
           ))}
         </div>
