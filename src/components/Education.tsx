@@ -81,12 +81,12 @@ export default function Education() {
                   B.Tech in Computer Science with Business Systems
                 </h4>
                 <p className="text-accent font-medium">SRM Institute of Science and Technology, KTR</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">June 2022 – May 2026</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">July 2022 - July 2026</p>
                 <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">CGPA: 8.43/10</p>
                 <p className="text-gray-600 dark:text-gray-400 mt-2">
                   Relevant Coursework: Object Oriented Programming, Databases, Discrete Mathematics,
                   Advanced Data Structures and Algorithms, Operating Systems, Computer Networks,
-                  Machine Learning, Information Retrieval
+                  Machine Learning, Project Management
                 </p>
               </motion.div>
 

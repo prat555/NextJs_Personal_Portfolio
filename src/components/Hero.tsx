@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/photo.jpeg";
 
 export default function Hero() {
   // Generate random dots for background animation
@@ -199,7 +199,7 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Passionate about creating innovative web and mobile solutions with modern technologies. Currently pursuing a B.Tech in Computer Science with expertise in the MERN stack, AI integration, and cross-platform App development.
+            Transforming ideas into elegant digital experiences. Crafting scalable web and mobile applications with cutting-edge technologies while exploring the intersection of AI and modern development to build tomorrow's solutions.
           </motion.p>
 
           <motion.div
