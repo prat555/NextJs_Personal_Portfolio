@@ -62,7 +62,6 @@ export default function Skills() {
       { name: "Problem Solving", icon: "fas fa-lightbulb" },
       { name: "Time Management", icon: "fas fa-clock" },
       { name: "Agile Methodology", icon: "fas fa-project-diagram" },
-      { name: "Interpersonal", icon: "fas fa-comments" },
       { name: "Teamwork", icon: "fas fa-users" },
       { name: "Leadership", icon: "fas fa-user-tie" },
     ],
