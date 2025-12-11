@@ -102,7 +102,7 @@ export default function Projects() {
       category: "AI/ML",
     },
     {
-      title: "Xylo - React Native Movie App made with Expo",
+      title: "Popco - React Native Movie App made with Expo",
       description:
         "A modern React Native movie app with Expo featuring movie browsing, detailed views, interactive elements like likes and downloads, and a sleek dark theme UI design.",
       technologies: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
