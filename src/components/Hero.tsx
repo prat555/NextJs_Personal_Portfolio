@@ -209,7 +209,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-0 md:mb-12"
           >
             <motion.a
-              href="/resume.pdf"
+              href="/resume.pdf?v=2"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
