@@ -51,7 +51,7 @@ export default function Hero() {
 
   const roles = [
     "Full Stack Developer",
-    "MERN Stack Expert",
+    "Competitive Programmer",
     "Mobile App Developer",
     "AI Enthusiast"
   ];
