@@ -94,7 +94,7 @@ export default function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-2 rounded-full transition-all duration-300 group ${
+                className={`relative px-4 py-2 rounded-full transition-all duration-300 group cursor-pointer ${
                   activeSection === item.id
                     ? "text-accent bg-accent/10"
                     : "text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent hover:bg-accent/5"
