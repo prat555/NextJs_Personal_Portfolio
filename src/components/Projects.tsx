@@ -10,6 +10,7 @@ import foodDeliveryBg from "@/assets/food-delivery-app.png";
 import csTruckBg from "@/assets/cs-truck.png";
 import chatbot from "@/assets/chatbot.png";
 import vidhi from "@/assets/vidhisetu.png";
+import chefmate from "@/assets/chefmate.png"; 
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -102,7 +103,7 @@ export default function Projects() {
       category: "AI/ML",
     },
     {
-      title: "Popco - React Native Movie App made with Expo",
+      title: "Xylo - React Native Movie App made with Expo",
       description:
         "A modern React Native movie app with Expo featuring movie browsing, detailed views, interactive elements like likes and downloads, and a sleek dark theme UI design.",
       technologies: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
@@ -140,6 +141,19 @@ export default function Projects() {
       icon: "fas fa-balance-scale",
       backgroundImage: vidhi,
       category: "Full Stack",
+    },
+    {
+      title: "ChefMate - AI Cooking Assistant",
+      description:
+        "Intelligent cooking assistant that leverages AI for recipe generation, ingredient substitution recommendations, and personalized cooking guidance. Features interactive chat, ingredient-based recipe search, and smart substitution engine using OpenRouter's free AI models.",
+      technologies: ["Next.js", "FastAPI", "Pydantic AI", "TypeScript", "Python", "OpenRouter"],
+      links: {
+        github: "https://github.com/prat555/ChefMate",
+      },
+      gradient: "from-green-400 to-emerald-600",
+      icon: "fas fa-utensils",
+      backgroundImage: chefmate,
+      category: "AI/ML",
     },
   ];
 
