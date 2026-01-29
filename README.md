@@ -21,34 +21,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, Tailwi
 - **UI Components**: shadcn/ui + Custom components
 - **Icons**: Font Awesome
 - **Deployment**: Vercel
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/prat555/NextJs_Personal_Portfolio.git
-cd NextJs_Personal_Portfolio
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
+  
 ## Project Structure
 
 ```
@@ -69,44 +42,3 @@ src/
 ├── lib/                 # Utility functions
 └── assets/              # Images and static files
 ```
-
-## Customization
-
-### Personal Information
-
-Update the following files with your information:
-- `src/components/Hero.tsx` - Name, title, description
-- `src/components/Contact.tsx` - Contact details
-- `src/components/Projects.tsx` - Your projects
-- `src/components/Skills.tsx` - Your skills
-- `src/components/Education.tsx` - Education and certifications
-
-### Images
-
-- Replace images in `src/assets/` with your own
-- Update image imports in components
-- Ensure images are optimized for web
-
-### Contact Form Setup
-
-1. Go to [Formspree](https://formspree.io/) and create an account
-2. Create a new form and get your form endpoint URL
-3. In `src/components/Contact.tsx`, replace the existing form action with your Formspree endpoint:
-```tsx
-<form
-  action="YOUR_FORMSPREE_ENDPOINT_HERE"  // Replace this line
-  method="POST"
-  className="space-y-6"
->
-```
-4. Test your form to ensure it's working correctly
-5. You'll receive form submissions directly in your email
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Vercel will automatically detect Next.js and deploy
-4. Your site will be available at `https://your-project.vercel.app`
