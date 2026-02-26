@@ -217,8 +217,9 @@ export default function Projects() {
                       <div className="relative h-52 md:h-56 overflow-hidden">
                         <Image
                           src={project.backgroundImage}
-                          alt={project.title}
+                          alt={`Screenshot of ${project.title} - ${project.category} project`}
                           fill
+                          loading="lazy"
                           sizes="(max-width: 640px) 90vw, (max-width: 768px) 70vw, (max-width: 1024px) 60vw, (max-width: 1280px) 45vw, 33vw"
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
