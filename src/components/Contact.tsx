@@ -35,6 +35,37 @@ export default function Contact() {
       return;
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid email address",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate name length
+    if (formData.name.trim().length < 2) {
+      toast({
+        title: "Name too short",
+        description: "Please enter at least 2 characters for your name.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate message length
+    if (formData.message.trim().length < 10) {
+      toast({
+        title: "Message too short",
+        description: "Please enter at least 10 characters for your message.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     toast({
       title: "Sending message...",
