@@ -86,6 +86,22 @@
   *:focus-visible {
     outline: 2px solid hsl(var(--accent));
     outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Enhanced focus ring for buttons and links */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
+    border-radius: 8px;
+    box-shadow: 0 0 0 4px hsl(var(--accent) / 0.15);
+  }
+
+  /* Remove focus ring for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
   }
 }
 
