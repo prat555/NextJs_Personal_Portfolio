@@ -101,7 +101,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="pt-8 pb-16 md:py-20 md:pb-20 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" aria-label="Skills and Technologies" className="pt-8 pb-16 md:py-20 md:pb-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
