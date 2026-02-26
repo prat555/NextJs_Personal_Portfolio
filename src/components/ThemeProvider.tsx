@@ -26,6 +26,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setTheme(systemPrefersDark ? "dark" : "light");
     }
+
+    // Listen for real-time OS theme changes when no user preference is saved
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      const userSavedTheme = localStorage.getItem("theme");
+      if (!userSavedTheme) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+    return () => mediaQuery.removeEventListener('change', handleSystemThemeChange);
   }, []);
 
   useEffect(() => {
