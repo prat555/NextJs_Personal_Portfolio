@@ -3,6 +3,10 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
+/**
+ * Floating scroll-to-top button that appears after scrolling 300px.
+ * Positioned at the bottom-right corner with a smooth scroll animation.
+ */
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 

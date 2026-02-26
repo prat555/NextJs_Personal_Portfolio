@@ -5,6 +5,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import profileImage from "@/assets/photo.jpeg";
 
+/**
+ * Hero section component that displays the main landing area.
+ * Features a profile photo, animated typewriter text showing different roles,
+ * social media links, and floating background animations.
+ */
 export default function Hero() {
   // Generate random dots for background animation
   const [dots, setDots] = useState<Array<{

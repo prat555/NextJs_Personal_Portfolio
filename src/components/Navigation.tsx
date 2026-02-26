@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+/**
+ * Desktop navigation component with scroll-based active section tracking.
+ * Renders a fixed top navigation bar that becomes translucent on scroll.
+ * Hidden on mobile screens (uses MobileNavigation instead).
+ */
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
