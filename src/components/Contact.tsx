@@ -13,6 +13,11 @@ interface ContactForm {
   message: string;
 }
 
+/**
+ * Contact section with a form for sending messages via Formspree.
+ * Includes email, phone, and location info alongside social links.
+ * Validates input fields before submission.
+ */
 export default function Contact() {
   const [formData, setFormData] = useState<ContactForm>({
     name: "",

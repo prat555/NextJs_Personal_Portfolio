@@ -13,6 +13,11 @@ interface SkillCategory {
   skills: Skill[];
 }
 
+/**
+ * Skills section displaying categorized technical and soft skills.
+ * Uses animated cards with spring-based hover effects.
+ * Organized into Programming Languages, Frameworks, Tools, and Soft Skills.
+ */
 export default function Skills() {
   const skillCategories: SkillCategory[] = [
   {
