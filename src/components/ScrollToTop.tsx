@@ -6,29 +6,29 @@ import { Button } from '@/components/ui/button'
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Show button when page is scrolled down 300px
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false)
-    }
-  }
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null
 
-  // Scroll to top smoothly
+    const handleScroll = () => {
+      if (timeoutId) clearTimeout(timeoutId)
+      timeoutId = setTimeout(() => {
+        setIsVisible(window.pageYOffset > 300)
+      }, 50)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
+  }, [])
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
   }
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleVisibility)
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility)
-    }
-  }, [])
 
   return (
     <>
