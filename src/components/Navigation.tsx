@@ -68,6 +68,8 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      role="navigation"
+      aria-label="Main navigation"
       className={`hidden md:block fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg"

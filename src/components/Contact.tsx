@@ -127,7 +127,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-16 pb-28 md:pb-16 bg-white dark:bg-gray-800">
+    <section id="contact" aria-label="Contact Information" className="py-12 md:py-16 pb-28 md:pb-16 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}

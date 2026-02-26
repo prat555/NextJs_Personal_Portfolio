@@ -89,6 +89,7 @@ export default function Hero() {
   return (
     <section
       id="about"
+      aria-label="About Pratyush Goutam"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-16 pb-16 md:pb-0"
     >
       {/* Background */}
