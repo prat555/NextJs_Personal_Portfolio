@@ -10,10 +10,28 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pratyush Goutam - Portfolio',
-  description: 'Full-stack developer portfolio showcasing projects and skills',
+  title: 'Pratyush Goutam - Full Stack Developer Portfolio',
+  description: 'Full-stack developer portfolio showcasing projects, skills, and experience in web development, mobile apps, and AI.',
+  keywords: ['Pratyush Goutam', 'Full Stack Developer', 'Portfolio', 'React', 'Next.js', 'TypeScript', 'Web Developer'],
+  authors: [{ name: 'Pratyush Goutam' }],
   icons: {
     icon: '/profile.png',
+  },
+  openGraph: {
+    title: 'Pratyush Goutam - Full Stack Developer Portfolio',
+    description: 'Full-stack developer portfolio showcasing projects, skills, and experience in web development, mobile apps, and AI.',
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Pratyush Goutam Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pratyush Goutam - Full Stack Developer Portfolio',
+    description: 'Full-stack developer portfolio showcasing projects, skills, and experience.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
