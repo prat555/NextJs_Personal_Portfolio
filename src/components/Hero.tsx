@@ -160,7 +160,7 @@ export default function Hero() {
             <div className="w-full h-full rounded-full overflow-hidden">
               <Image 
                 src={profileImage} 
-                alt="Pratyush Goutam" 
+                alt="Pratyush Goutam - Full Stack Developer profile photo" 
                 className="w-full h-full object-cover"
                 width={128}
                 height={128}
