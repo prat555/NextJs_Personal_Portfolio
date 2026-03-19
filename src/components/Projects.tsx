@@ -34,7 +34,7 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Shizuka - Sustainable Ecommerce Platform",
+      title: "GreenKart - Sustainable Ecommerce Platform",
       description:
         "A sustainable shopping platform built with MERN stack, featuring product catalog, cart/wishlist functionality, and JWT-secured checkout process.",
       technologies: ["React", "TailwindCSS", "Node.js", "MongoDB", "Firebase"],
@@ -103,7 +103,7 @@ export default function Projects() {
       category: "AI/ML",
     },
     {
-      title: "Xylo - React Native Movie App made with Expo",
+      title: "MovieBox - React Native Movie App made with Expo",
       description:
         "A modern React Native movie app with Expo featuring movie browsing, detailed views, interactive elements like likes and downloads, and a sleek dark theme UI design.",
       technologies: ["React Native", "Expo", "TypeScript", "Redux", "NativeWind"],
@@ -132,7 +132,7 @@ export default function Projects() {
       title: "VidhiSetu - AI Legal Assistant for Indian Law",
       description:
         "AI-powered legal assistant for Indian law. Get instant guidance on constitutional, criminal, civil, and corporate law matters. Built with Next.js, TypeScript, and Google Gemini API.",
-    technologies: ["NextJS 16","Google Gemini API", "TypeScript", "TailwindCSS", "Vercel"],
+    technologies: ["NextJS 16","FastAPI", "Qdrant", "Redis", "Vercel"],
       links: {
         github: "https://github.com/prat555/VidhiSetu_Legal_Assistant",
         live: "https://vidhisetu.vercel.app/",
