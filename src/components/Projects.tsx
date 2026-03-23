@@ -132,7 +132,7 @@ export default function Projects() {
       title: "VidhiSetu - AI Legal Assistant for Indian Law",
       description:
         "AI-powered legal assistant for Indian law. Get instant guidance on constitutional, criminal, civil, and corporate law matters. Built with Next.js, TypeScript, and Google Gemini API.",
-    technologies: ["NextJS 16","FastAPI", "Qdrant", "Redis", "Vercel"],
+    technologies: ["NextJS 16","FastAPI", "Qdrant", "Redis", "LoRA","Vercel"],
       links: {
         github: "https://github.com/prat555/VidhiSetu_Legal_Assistant",
         live: "https://vidhisetu.vercel.app/",
