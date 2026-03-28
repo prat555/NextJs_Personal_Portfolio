@@ -11,7 +11,7 @@ import csTruckBg from "@/assets/cs-truck.png";
 import chatbot from "@/assets/chatbot.png";
 import vidhi from "@/assets/vidhisetu.png";
 import chefmate from "@/assets/chefmate.png"; 
-import nextflowBg from "@/assets/nextflow.jpeg";
+import nextflowBg from "@/assets/nextflow.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
