@@ -40,13 +40,13 @@ export default function Projects() {
         "A Workflow platform for building and running visual DAG pipelines across text, image, and video tasks. Features Clerk authentication, node-based editor, async execution with Trigger.dev, and persistent run tracking with Prisma/PostgreSQL.",
       technologies: ["Next.js", "Radix UI", "XYFlow", "Clerk", "Prisma", "PostgreSQL", "Trigger.dev", "OpenRouter", "Transloadit"],
       links: {
-        github: "#",
-        live: "#"
+        github: "https://github.com/prat555/NextFlow_Node_Editor",
+        live: "https://clone-krea.vercel.app/"
       },
       gradient: "from-blue-500 to-fuchsia-600",
       icon: "fas fa-project-diagram",
       backgroundImage: nextflowBg,
-      category: "AI/Workflow Platform",
+      category: "AI/ML",
     },
     {
       title: "GreenKart - Sustainable Ecommerce Platform",
