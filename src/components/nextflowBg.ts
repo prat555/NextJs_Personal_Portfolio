@@ -1,0 +1,1 @@
+import nextflowBg from "@/assets/photo.jpeg";
