@@ -60,7 +60,7 @@ export default function Projects() {
       gradient: "from-green-400 to-blue-600",
       icon: "fas fa-shopping-cart",
       backgroundImage: ecommerceBg,
-      category: "Web Development",
+      category: "Full Stack",
     },
     {
       title: "EcoVision - AI Waste Classification and Management",
