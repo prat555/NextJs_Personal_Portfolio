@@ -12,6 +12,7 @@ import chatbot from "@/assets/chatbot.png";
 import vidhi from "@/assets/vidhisetu.png";
 import chefmate from "@/assets/chefmate.png"; 
 import nextflowBg from "@/assets/nextflow.png";
+import findash from "@/assets/findash.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useState } from "react";
@@ -34,6 +35,20 @@ export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects: Project[] = [
+    {
+      title: "Finance Dashboard API - Role-Based Backend System",
+      description:
+        "A role-based REST API backend for a finance dashboard built with Node.js, TypeScript, Express, Prisma, and PostgreSQL. Includes JWT auth, Zod validation, Swagger docs, soft deletes, and role-specific access for Viewer, Analyst, and Admin.",
+      technologies: ["Node.js",  "Swagger", "Express", "Typescript","Prisma", "PostgreSQL", "JWT", "Zod", "Jest", "Supertest"],
+      links: {
+        github: "https://github.com/prat555/finance-dashboard-api",
+        live: "https://finance-dashboard-api-52bg.onrender.com/api/docs/",
+      },
+      gradient: "from-emerald-500 to-teal-600",
+      icon: "fas fa-chart-line",
+      backgroundImage: findash,
+      category: "Backend",
+    },
     {
       title: "NextFlow - AI Creative Workflow Platform",
       description:
